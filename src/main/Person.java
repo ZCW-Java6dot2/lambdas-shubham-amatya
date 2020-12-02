@@ -2,12 +2,14 @@ package main;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 
 public class Person {
     String name;
     LocalDate birthday;
     Sex gender;
     String emailAddress;
+
 
     public Person(String name, LocalDate birthday, Sex gender, String emailAddress) {
         this.name = name;
@@ -70,14 +72,29 @@ public class Person {
         this.emailAddress = emailAddress;
     }
 
-    public int getAge(int year, int month, int day) {
+    public int getAge() {
         return Period.between(birthday, LocalDate.now()).getYears();
     }
 
     public void printPerson() {
         System.out.println(this.toString());
 
+    }
 
+    public static void printPersonsOlderThan(List<Person> roster, int age) {
+        for (Person p : roster) {
+            if (p.getAge() >= age) {
+                p.printPerson();
+            }
+        }
+    }
+    public static void printPersonsWithinAgeRange(
+            List<Person> roster, int low, int high) {
+        for (Person p : roster) {
+            if (low <= p.getAge() && p.getAge() < high) {
+                p.printPerson();
+            }
+        }
     }
 
 }
