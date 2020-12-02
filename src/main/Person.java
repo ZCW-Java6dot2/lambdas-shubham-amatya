@@ -1,3 +1,5 @@
+package main;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -28,7 +30,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "main.java.Person{" +
                 "name='" + name + '\'' +
                 ", birthday='" + birthday + '\'' +
                 ", gender=" + gender +
@@ -73,7 +75,9 @@ public class Person {
     }
 
     public void printPerson() {
-        // ...
+        System.out.println(this.toString());
+
+
     }
 
 }
