@@ -78,10 +78,9 @@ public class Person {
 
     public void printPerson() {
         System.out.println(this.toString());
-
     }
 
-    public static void printPersonsOlderThan(List<Person> roster, int age) {
+    public  static void printPersonsOlderThan(List<Person> roster, int age) {
         for (Person p : roster) {
             if (p.getAge() >= age) {
                 p.printPerson();

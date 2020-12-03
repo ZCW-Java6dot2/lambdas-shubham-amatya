@@ -121,6 +121,17 @@ public class PersonsTest {
     }
 
 
+    @Test
+    public void PrintPersonOlderThanTest(){
+       person1.printPersonsOlderThan(people, 50);
+    }
+
+
+    @Test
+    public void printPersonsWithinAgeRangeTest(){
+       person1.printPersonsWithinAgeRange(people, 30,50);
+    }
+
 
 
 
