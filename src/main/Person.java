@@ -96,4 +96,28 @@ public class Person {
         }
     }
 
+    public static void printPersons(
+            List<Person> roster, CheckPerson tester) {
+        for (Person p : roster) {
+            if (tester.test(p)) {
+                p.printPerson();
+            }
+        }
+        printPersons(
+                roster,
+                new CheckPerson() {
+                    public boolean test(Person p) {
+                        return p.getGender() == Person.Sex.MALE
+                                && p.getAge() >= 18
+                                && p.getAge() <= 25;
+                    }
+                }
+        );
+
+
+
+    }
+
+
+
 }
